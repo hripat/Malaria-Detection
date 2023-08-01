@@ -27,7 +27,7 @@ There are a total of 24,958 train and 2,600 test images (colored) that we have t
 
 - There are sections called **Think About It** in the notebook that will help you get a better understanding of the reasoning behind a particular technique/step. Interested learners can take alternative approaches if they want to explore different techniques.
 
-###<b> Mounting the Drive
+### <b> Mounting the Drive
 
 
 ```python
@@ -241,7 +241,7 @@ plt.imshow(test_images[0])
     
 
 
-###<b> Checking the shape of train and test images
+### <b> Checking the shape of train and test images
 
 
 ```python
@@ -282,7 +282,7 @@ plt.imshow(test_images[10])
     
 
 
-###<b> Checking the shape of train and test labels
+### <b> Checking the shape of train and test labels
 
 
 ```python
@@ -295,7 +295,7 @@ print("Shape - Testing Labels", test_labels.shape)
     Shape - Testing Labels (2600,)
 
 
-####<b> Observations and insights: The training data consists of 24,958 images of the shape (64,64,3) and the testing data consists of 2,600 images of the shape (64,64,3). Similarly, their respective labels are also 24,958 for the training labels and 2,600 for the testing labels, with the label arrays containing 0 or 1 if the cells are uninfected or parasitized, respectively.
+#### <b> Observations and insights: The training data consists of 24,958 images of the shape (64,64,3) and the testing data consists of 2,600 images of the shape (64,64,3). Similarly, their respective labels are also 24,958 for the training labels and 2,600 for the testing labels, with the label arrays containing 0 or 1 if the cells are uninfected or parasitized, respectively.
 
 
 ### <b>Check the minimum and maximum range of pixel values for train and test images
@@ -376,11 +376,11 @@ print("The maximum pixel value in the test images Channel 3:", np.min(train_min_
     The maximum pixel value in the test images Channel 3: 0
 
 
-####<b> Observations and insights: In the training and test images, the maximum pixel value for all the channels is 255 while the minimum is 0.
+#### <b> Observations and insights: In the training and test images, the maximum pixel value for all the channels is 255 while the minimum is 0.
 
 
 
-###<b> Count the number of values in both uninfected and parasitized
+### <b> Count the number of values in both uninfected and parasitized
 
 
 ```python
@@ -399,7 +399,7 @@ print(test_labelSeries.value_counts())
     dtype: int64
 
 
-###<b>Normalize the images
+### <b>Normalize the images
 
 
 ```python
@@ -409,9 +409,9 @@ train_images = (train_images/255).astype('float32')
 test_images = (test_images/255).astype('float32')
 ```
 
-####<b> Observations and insights: The Training data has 12,582 labeled parasitized cells and 12,376 uninfected cells. The Testing data has 1,300 paraisitized and uninfected cells. It has now been normalized.
+#### <b> Observations and insights: The Training data has 12,582 labeled parasitized cells and 12,376 uninfected cells. The Testing data has 1,300 paraisitized and uninfected cells. It has now been normalized.
 
-###<b> Plot to check if the data is balanced
+### <b> Plot to check if the data is balanced
 
 
 ```python
@@ -458,7 +458,7 @@ plt2.set_ylabel("Count")
     
 
 
-####<b> Observations and insights: The data for both training and testing is balanced, refer to the numbers above.
+#### <b> Observations and insights: The data for both training and testing is balanced, refer to the numbers above.
 
 ### <b>Data Exploration</b>
 Let's visualize the images from the train data
@@ -512,9 +512,9 @@ for n in range(1, 17):
     
 
 
-####<b> Observations and insights: Both uninfected and parasitized cells come in different shapes and sizes. Some uninfected cells do have some particles inside them but the biggest distinction between parasitized and uninfected cells is that the parasitized cells have a bigger, purple particle (or multiple purple particles) inside them.
+#### <b> Observations and insights: Both uninfected and parasitized cells come in different shapes and sizes. Some uninfected cells do have some particles inside them but the biggest distinction between parasitized and uninfected cells is that the parasitized cells have a bigger, purple particle (or multiple purple particles) inside them.
 
-###<b> Similarly visualize the images with subplot(6, 6) and figsize = (12, 12)
+### <b> Similarly visualize the images with subplot(6, 6) and figsize = (12, 12)
 
 
 ```python
@@ -548,9 +548,9 @@ for n in range(1, 13):
     
 
 
-####<b>Observations and insights: Both uninfected and parasitized cells come in different shapes and sizes. Some uninfected cells do have some particles inside them but the biggest distinction between parasitized and uninfected cells is that the parasitized cells have a bigger, purple particle (or multiple purple particles) inside them. The purple particle can only be seen in the parasitized cells.
+#### <b>Observations and insights: Both uninfected and parasitized cells come in different shapes and sizes. Some uninfected cells do have some particles inside them but the biggest distinction between parasitized and uninfected cells is that the parasitized cells have a bigger, purple particle (or multiple purple particles) inside them. The purple particle can only be seen in the parasitized cells.
 
-###<b> Plotting the mean images for parasitized and uninfected
+### <b> Plotting the mean images for parasitized and uninfected
 
 
 ```python
@@ -624,11 +624,11 @@ uninfected_mean = find_mean_img(np.array(uninfected_data), 'Uninfected')
 #print(uninfected_mean)
 ```
 
-####<b> Observations and insights: The parasitized cell's mean image appears to be pinker than the average uninfected cell. This is because, as observed in the earlier images, the parasitized cells have a purple particle (parasite) in them. However, not all the parasitized cells have the parasite in the same exact location, causing the overall (average) image of them to appear pinker than the uninfected one. However, the difference between the two mean images is not very significant.
+#### <b> Observations and insights: The parasitized cell's mean image appears to be pinker than the average uninfected cell. This is because, as observed in the earlier images, the parasitized cells have a purple particle (parasite) in them. However, not all the parasitized cells have the parasite in the same exact location, causing the overall (average) image of them to appear pinker than the uninfected one. However, the difference between the two mean images is not very significant.
 
 ### <b>Converting RGB to HSV of Images using OpenCV
 
-###<b> Converting the train data
+### <b> Converting the train data
 
 
 ```python
@@ -677,7 +677,7 @@ for t, i in zip(range(5), viewimage):
     
 
 
-###<b> Converting the test data
+### <b> Converting the test data
 
 
 ```python
@@ -725,11 +725,11 @@ for t, i in zip(range(5), viewimage):
     
 
 
-####<b>Observations and insights: The HSV color model allows for better visualization as it's based on how human's percieve colors. The spots in the cells (particles/anomalies) are standing out more in the HSV representaiton of the image. Perhaps, an algorithm trained on these images might perform a bit better.
+#### <b>Observations and insights: The HSV color model allows for better visualization as it's based on how human's percieve colors. The spots in the cells (particles/anomalies) are standing out more in the HSV representaiton of the image. Perhaps, an algorithm trained on these images might perform a bit better.
 
-###<b> Processing Images using Gaussian Blurring
+### <b> Processing Images using Gaussian Blurring
 
-###<b> Gaussian Blurring on train data
+### <b> Gaussian Blurring on train data
 
 
 ```python
@@ -770,7 +770,7 @@ for t, i in zip(range(5), viewimage):
     
 
 
-###<b> Gaussian Blurring on test data
+### <b> Gaussian Blurring on test data
 
 
 ```python
@@ -816,7 +816,7 @@ for t, i in zip(range(5), viewimage):
 
 **Think About It:** Would blurring help us for this problem statement in any way? What else can we try?
 
-###<B>One Hot Encoding on the train and test labels
+### <B>One Hot Encoding on the train and test labels
 
 
 ```python
@@ -832,7 +832,7 @@ test_labels = to_categorical(test_labels, 2)
 
 **Note:** The Base Model has been fully built and evaluated with all outputs shown to give an idea about the process of the creation and evaluation of the performance of a CNN architecture. A similar process can be followed in iterating to build better-performing CNN architectures.
 
-###<b> Importing the required libraries for building and training our Model
+### <b> Importing the required libraries for building and training our Model
 
 
 ```python
@@ -866,7 +866,7 @@ random.seed(42)
 tf.random.set_seed(42)
 ```
 
-###<b> Building the model
+### <b> Building the model
 
 
 ```python
@@ -942,7 +942,7 @@ model.summary()
     _________________________________________________________________
 
 
-###<b> Compiling the model
+### <b> Compiling the model
 
 
 ```python
@@ -977,7 +977,7 @@ history = model.fit(train_images, train_labels, batch_size = 32, callbacks = cal
     624/624 [==============================] - 112s 180ms/step - loss: 0.0692 - accuracy: 0.9771 - val_loss: 0.0818 - val_accuracy: 0.9820
 
 
-###<b> Evaluating the model on test data
+### <b> Evaluating the model on test data
 
 
 ```python
@@ -1081,8 +1081,8 @@ plot_accuracy(history)
 
 So now let's try to build another model with few more add on layers and try to check if we can try to improve the model. Therefore try to build a model by adding few layers if required and altering the activation functions.
 
-###<b> Model 1
-####<b> Trying to improve the performance of our model by adding new layers
+### <b> Model 1
+#### <b> Trying to improve the performance of our model by adding new layers
 
 
 
@@ -1090,7 +1090,7 @@ So now let's try to build another model with few more add on layers and try to c
 backend.clear_session() # Clearing the backend for new model
 ```
 
-###<b> Building the Model
+### <b> Building the Model
 
 
 ```python
@@ -1209,7 +1209,7 @@ model1.summary()
     _________________________________________________________________
 
 
-###<b> Compiling the model
+### <b> Compiling the model
 
 
 ```python
@@ -1245,7 +1245,7 @@ history1 = model1.fit(train_images, train_labels, batch_size = 32, callbacks = c
     624/624 [==============================] - 107s 172ms/step - loss: 0.0748 - accuracy: 0.9755 - val_loss: 0.0934 - val_accuracy: 0.9702
 
 
-###<b> Evaluating the model
+### <b> Evaluating the model
 
 
 ```python
@@ -1317,7 +1317,7 @@ plot_accuracy(history1)
     
 
 
-###<b>Think about it:</b><br>
+### <b>Think about it:</b><br>
 Now let's build a model with LeakyRelu as the activation function  
 
 *  Can the model performance be improved if we change our activation function to LeakyRelu?
@@ -1325,7 +1325,7 @@ Now let's build a model with LeakyRelu as the activation function
 
 Let us try to build a model using BatchNormalization and using LeakyRelu as our activation function.
 
-###<b> Model 2 with Batch Normalization
+### <b> Model 2 with Batch Normalization
 
 
 ```python
@@ -1335,7 +1335,7 @@ from tensorflow.keras.layers import Dense, Conv2D, MaxPool2D, MaxPooling2D, Batc
 
 ```
 
-###<b> Building the Model
+### <b> Building the Model
 
 
 ```python
@@ -1447,7 +1447,7 @@ model2.summary()
     _________________________________________________________________
 
 
-###<b>Compiling the model
+### <b>Compiling the model
 
 
 ```python
@@ -1493,7 +1493,7 @@ plot_accuracy(history2)
     
 
 
-###<b>Evaluating the model
+### <b>Evaluating the model
 
 
 ```python
@@ -1509,7 +1509,7 @@ print('\n', 'Test_Accuracy:-', accuracy[1])
      Test_Accuracy:- 0.9876922965049744
 
 
-####<b>Observations and insights: This model is performing better than the base and Model 1. The differences between the models being that this one has Batch Normalization and Leaky ReLU layers. Additionally, the validation split was changed to 0.25 in order to give some more data to the validation set. The test accuracy for this Model 2 is 0.9877.
+#### <b>Observations and insights: This model is performing better than the base and Model 1. The differences between the models being that this one has Batch Normalization and Leaky ReLU layers. Additionally, the validation split was changed to 0.25 in order to give some more data to the validation set. The test accuracy for this Model 2 is 0.9877.
 
 <b> Generate the classification report and confusion matrix
 
@@ -1574,14 +1574,14 @@ The model has good recall for 1 (Parasitized Cells) but not as good as the base 
 
 
 
-###<b>Model 3 with Data Augmentation
+### <b>Model 3 with Data Augmentation
 
 
 ```python
 backend.clear_session() # Clearing backend for new model
 ```
 
-###<b> Using image data generator
+### <b> Using image data generator
 
 
 ```python
@@ -1611,7 +1611,7 @@ val_generator =  val_datagen.flow(x = X_val, y = y_val, batch_size = 64, seed = 
 
 
 
-####<B>Visualizing Augmented images
+#### <B>Visualizing Augmented images
 
 
 ```python
@@ -1643,9 +1643,9 @@ for (image, label, ax) in zip(images, labels, axes.flatten()):
     
 
 
-####<b>Observations and insights: The image data generator has randomly flipped images horizontally and the zoom was set to 0.5 to 1.5 and randomly rotated within 30 degrees. Therefore, the images show that.
+#### <b>Observations and insights: The image data generator has randomly flipped images horizontally and the zoom was set to 0.5 to 1.5 and randomly rotated within 30 degrees. Therefore, the images show that.
 
-###<b>Building the Model
+### <b>Building the Model
 
 
 ```python
@@ -1787,7 +1787,7 @@ history3 = model3.fit(train_generator,
     312/312 [==============================] - 270s 866ms/step - loss: 0.1290 - accuracy: 0.9572 - val_loss: 0.1061 - val_accuracy: 0.9685
 
 
-###<B>Evaluating the model
+### <B>Evaluating the model
 
 <b>Plot the train and validation accuracy
 
@@ -2038,7 +2038,7 @@ model4.summary()
     _________________________________________________________________
 
 
-###<b>Compiling the model
+### <b>Compiling the model
 
 
 ```python
@@ -2106,7 +2106,7 @@ plot_accuracy(history4)
 
 *   What can be observed from the validation and train curves?
 
-###<b> Evaluating the model
+### <b> Evaluating the model
 
 
 ```python
@@ -2536,12 +2536,12 @@ plt.show()
     
 
 
-###<b>Think about it:</b>
+### <b>Think about it:</b>
 *  What observations and insights can be drawn from the confusion matrix and classification report?
 *  Choose the model with the best accuracy scores from all the above models and save it as a final model.
 
 
-####<b> Observations and Conclusions drawn from the final model: _____
+#### <b> Observations and Conclusions drawn from the final model: _____
 
 
 

@@ -1,6 +1,6 @@
 # **Malaria Detection**
 
-##<b>Problem Definition</b>
+## Problem Definition</b>
 **The context:** Why is this problem important to solve?<br>
 **The objectives:** What is the intended goal?<br>
 **The key questions:** What are the key questions that need to be answered?<br>
